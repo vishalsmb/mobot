@@ -1,18 +1,22 @@
 {
-  "name": "mobot",
+  "name": "more",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
+  "description": "A simple chatbot application that displays about movie reviews and show timings and is capable of communicating with the user in natural language.",
+  "main": "app.js",
+  "author": "Vishal S M B",
   "license": "ISC",
   "dependencies": {
     "botbuilder": "^3.15.0",
-    "restify": "^7.2.1"
-  }
-, "scripts": {
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "sync-request": "^6.0.0"
+  },
+  "keywords": [
+    "chatbot",
+    "review",
+    "movie"
+  ],
+"scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "node index.js" 
+    "start" : "node app.js" 
   }}
