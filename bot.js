@@ -3,7 +3,7 @@ const builder = require('botbuilder');
 var jsonString;
 var request = require('sync-request');
 function myfunc(name) {
-    var query = "https://www.googleapis.com/customsearch/v1/?key=AIzaSyAPpwQb0Ioe7G_aVpx-ycUbRs9Jci48CME&cx=015474952861500609087:1cnrbvoeiza&q=";
+    var query = "https://www.googleapis.com/customsearch/v1/?key=AIzaSyCVhFTpinpeDorPeftXQF0uDwtyGYBdbE8&cx=015474952861500609087:1cnrbvoeiza&q=";
     var url = query+name;
     var a =request('GET',url);
     jsonString = JSON.parse(a.getBody());
@@ -61,9 +61,8 @@ bot.dialog('Movie Review',[
        		.attachments(cards);
     	session.send(reply);
     	session.send('Rating (out of 10): '+jsonString.items[0].pagemap.aggregaterating[0].ratingvalue);
-    	session.send('Release Date : '+jsonString.items[0].pagemap.moviereview[0].release_date);
-    	session.send('Director : '+jsonString.items[0].pagemap.moviereview[0].directed_by);
-    	session.send('Production : '+jsonString.items[0].pagemap.organization[0].name);
+    	session.send('Rating count : '+jsonString.items[0].pagemap.aggregaterating[0].ratingcount);
+    	session.send('Review count : '+jsonString.items[0].pagemap.aggregaterating[0].reviewcount);
     	session.send()
     }
 ])
@@ -72,7 +71,7 @@ function getCardsAttachments(session) {
         new builder.HeroCard(session)
             .title(jsonString.items[0].title)
             .subtitle(jsonString.items[0].displayLink)
-            .text(jsonString.items[0].pagemap.movie[0].description)
+            .text(jsonString.items[0].snippet)
             .images([
                 builder.CardImage.create(session, jsonString.items[0].pagemap.cse_thumbnail[0].src)
             ])
@@ -83,7 +82,7 @@ function getCardsAttachments(session) {
         new builder.HeroCard(session)
             .title(jsonString.items[1].title)
             .subtitle(jsonString.items[1].displayLink)
-            .text(jsonString.items[1].pagemap.movie[0].description)
+            .text(jsonString.items[1].snippet)
             .images([
                 builder.CardImage.create(session, jsonString.items[1].pagemap.cse_thumbnail[0].src)
             ])
@@ -119,7 +118,7 @@ function getCardsAttachments1(session) {
         new builder.HeroCard(session)
             .title(jsonString.items[0].title)
             .subtitle(jsonString.items[0].displayLink)
-            .text(jsonString.items[0].pagemap.movie[0].description)
+            .text(jsonString.items[0].snippet)
             .images([
                 builder.CardImage.create(session, jsonString.items[0].pagemap.cse_thumbnail[0].src)
             ])
