@@ -70,7 +70,7 @@ function getCardsAttachments(session) {
    return [
         new builder.HeroCard(session)
             .title(jsonString.items[0].title)
-            .subtitle(jsonString.items[0].displayLink)
+            .subtitle(jsonString.items[0].link)
             .text(jsonString.items[0].snippet)
             .images([
                 builder.CardImage.create(session, jsonString.items[0].pagemap.cse_thumbnail[0].src)
@@ -81,7 +81,7 @@ function getCardsAttachments(session) {
 
         new builder.HeroCard(session)
             .title(jsonString.items[1].title)
-            .subtitle(jsonString.items[1].displayLink)
+            .subtitle(jsonString.items[1].link)
             .text(jsonString.items[1].snippet)
             .images([
                 builder.CardImage.create(session, jsonString.items[1].pagemap.cse_thumbnail[0].src)
@@ -92,7 +92,7 @@ function getCardsAttachments(session) {
 
         new builder.HeroCard(session)
             .title(jsonString.items[2].title)
-            .subtitle(jsonString.items[2].displayLink)
+            .subtitle(jsonString.items[2].link)
             .text(jsonString.items[2].snippet)
             .images([
                 builder.CardImage.create(session, jsonString.items[2].pagemap.cse_thumbnail[0].src)
@@ -103,7 +103,7 @@ function getCardsAttachments(session) {
 
         new builder.HeroCard(session)
             .title(jsonString.items[3].title)
-            .subtitle(jsonString.items[3].displayLink)
+            .subtitle(jsonString.items[3].link)
             .text(jsonString.items[3].snippet)
             .images([
                 builder.CardImage.create(session, jsonString.items[3].pagemap.cse_thumbnail[0].src)
@@ -117,7 +117,7 @@ function getCardsAttachments1(session) {
    return [
         new builder.HeroCard(session)
             .title(jsonString.items[0].title)
-            .subtitle(jsonString.items[0].displayLink)
+            .subtitle(jsonString.items[0].link)
             .text(jsonString.items[0].snippet)
             .images([
                 builder.CardImage.create(session, jsonString.items[0].pagemap.cse_thumbnail[0].src)
